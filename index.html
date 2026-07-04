@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Buğrahan Yavuzdoğan — Software Developer</title>
+<meta name="description" content="Buğrahan Yavuzdoğan — Software developer based in Istanbul, Türkiye. Portfolio, experience, and selected projects.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   Single column, one typeface, zero JavaScript.
+   Hierarchy is built with spacing, weight, and gray tones.
+   Automatic dark mode based on system preference.
+   ============================================================ */
+:root{
+  --bg:#ffffff;
+  --text:#151515;
+  --gray:#6b6b6b;
+  --light:#a3a3a3;
+  --line:#e6e6e6;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#121212;
+    --text:#ececec;
+    --gray:#9b9b9b;
+    --light:#5f5f5f;
+    --line:#2a2a2a;
+  }
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:"Inter Tight",system-ui,sans-serif;
+  font-size:1.0625rem;
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+}
+
+::selection{background:var(--text);color:var(--bg)}
+
+.page{
+  max-width:640px;
+  margin:0 auto;
+  padding:88px 24px 56px;
+}
+
+a{
+  color:var(--text);
+  text-decoration:underline;
+  text-decoration-color:var(--light);
+  text-underline-offset:3px;
+  transition:text-decoration-color .15s ease, color .15s ease;
+}
+a:hover{text-decoration-color:var(--text)}
+a:focus-visible{
+  outline:2px solid var(--text);
+  outline-offset:3px;
+  border-radius:2px;
+}
+
+/* ---------- intro ---------- */
+h1{
+  font-size:1.55rem;
+  font-weight:600;
+  letter-spacing:-.01em;
+  line-height:1.3;
+}
+.role{
+  color:var(--gray);
+  margin-top:2px;
+}
+.intro{
+  margin-top:28px;
+  color:var(--gray);
+}
+.intro strong{color:var(--text);font-weight:500}
+.available{
+  margin-top:16px;
+  color:var(--gray);
+}
+
+/* ---------- sections ---------- */
+section{margin-top:72px}
+h2{
+  font-size:.78rem;
+  font-weight:500;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--light);
+  margin-bottom:26px;
+}
+
+/* ---------- experience ---------- */
+.item + .item{margin-top:30px}
+.item-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  gap:16px;
+  flex-wrap:wrap;
+}
+.item-head h3{
+  font-size:1.0625rem;
+  font-weight:600;
+}
+.item-head .co{color:var(--gray);font-weight:400}
+.date{
+  color:var(--light);
+  font-size:.85rem;
+  white-space:nowrap;
+}
+.item p{
+  margin-top:4px;
+  color:var(--gray);
+  font-size:.97rem;
+}
+
+/* ---------- skills ---------- */
+.skills{color:var(--gray)}
+.skills b{color:var(--text);font-weight:500}
+
+/* ---------- contact ---------- */
+.contact p{color:var(--gray)}
+.contact .mail{
+  display:inline-block;
+  margin-top:10px;
+  font-size:1.125rem;
+  font-weight:500;
+}
+.links{
+  margin-top:14px;
+  color:var(--light);
+}
+.links a{color:var(--gray)}
+.links a:hover{color:var(--text)}
+
+/* ---------- footer ---------- */
+footer{
+  margin-top:80px;
+  padding-top:24px;
+  border-top:1px solid var(--line);
+  color:var(--light);
+  font-size:.85rem;
+}
+
+@media (max-width: 480px){
+  .page{padding-top:64px}
+  .item-head{flex-direction:column;gap:2px}
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ============ INTRO ============ -->
+  <header>
+    <h1>Buğrahan Yavuzdoğan</h1>
+    <p class="role">Software Developer — Istanbul, Türkiye</p>
+    <!-- Edit the summary below however you like -->
+    <p class="intro">
+      Software Developer with hands-on experience across the software
+      development lifecycle. A solution-oriented professional with strong
+      analytical thinking, problem-solving, and teamwork skills, and a genuine
+      eagerness to learn. Committed to adding value to every project I
+      contribute to and to continuous professional growth.
+    </p>
+    <p class="available">
+      Get in touch: <a href="mailto:bqrayvzdgn@gmail.com">bqrayvzdgn@gmail.com</a>
+    </p>
+  </header>
+
+  <!-- ============ EXPERIENCE ============ -->
+  <section aria-label="Experience">
+    <h2>Experience</h2>
+
+    <div class="item">
+      <div class="item-head">
+        <h3>Software Developer<span class="co">, Yapıdrom Teknoloji</span></h3>
+        <span class="date">Apr 2025 — Present</span>
+      </div>
+      <p>Joined the team full-time after completing my internship; contributing to the development of the company's products.</p>
+    </div>
+
+    <div class="item">
+      <div class="item-head">
+        <h3>Software Developer Intern<span class="co">, Yapıdrom Teknoloji</span></h3>
+        <span class="date">Dec 2024 — Jan 2025</span>
+      </div>
+      <p>Gained hands-on experience with professional software development workflows, working alongside the engineering team on real projects.</p>
+    </div>
+  </section>
+
+  <!-- ============ PROJECTS ============ -->
+  <!-- The block below is a template. Replace "Project Name" and the
+       description with your own project; duplicate the block to add more.
+       Put the project link in place of href="#". -->
+  <section aria-label="Projects">
+    <h2>Projects</h2>
+
+    <div class="item">
+      <div class="item-head">
+        <h3><a href="#">Project Name</a></h3>
+        <span class="date">2025</span>
+      </div>
+      <p>A one-sentence description of what the project does.</p>
+    </div>
+  </section>
+
+  <!-- ============ SKILLS ============ -->
+  <!-- Fill in with your own skills. Grouping example:
+       <b>Languages:</b> C#, JavaScript · <b>Frontend:</b> React ·
+       <b>Tools:</b> Git, Docker -->
+  <section aria-label="Skills">
+    <h2>Skills</h2>
+    <p class="skills">
+      List your languages, frameworks, and tools here.
+    </p>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="contact" aria-label="Contact">
+    <h2>Contact</h2>
+    <p>The fastest way to reach me is email.</p>
+    <a class="mail" href="mailto:bqrayvzdgn@gmail.com">bqrayvzdgn@gmail.com</a>
+    <!-- Paste your LinkedIn profile URL in place of href="#" below -->
+    <p class="links">
+      <a href="https://github.com/bqrayvzdgn" rel="noopener">GitHub</a> · <a href="#" rel="noopener">LinkedIn</a>
+    </p>
+  </section>
+
+  <footer>© 2026 Buğrahan Yavuzdoğan</footer>
+
+</div>
+</body>
+</html>

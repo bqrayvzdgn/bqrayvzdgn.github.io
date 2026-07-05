@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <style>
+    .bg{fill:#151515}
+    .fg{fill:#ffffff}
+    @media (prefers-color-scheme:dark){.bg{fill:#ececec}.fg{fill:#121212}}
+  </style>
+  <rect class="bg" width="32" height="32" rx="7"/>
+  <text class="fg" x="16" y="22" text-anchor="middle" font-family="system-ui,-apple-system,'Segoe UI',Roboto,sans-serif" font-size="19" font-weight="700">B</text>
+</svg>

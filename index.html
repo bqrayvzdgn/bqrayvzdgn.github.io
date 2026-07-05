@@ -5,6 +5,27 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Buğrahan Yavuzdoğan — Software Developer</title>
 <meta name="description" content="Buğrahan Yavuzdoğan — Software developer based in Istanbul, Türkiye. Portfolio, experience, and selected projects.">
+<link rel="canonical" href="https://bqrayvzdgn.github.io/">
+<meta name="author" content="Buğrahan Yavuzdoğan">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#121212" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+<!-- Open Graph / social sharing -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://bqrayvzdgn.github.io/">
+<meta property="og:title" content="Buğrahan Yavuzdoğan — Software Developer">
+<meta property="og:description" content="Software developer based in Istanbul, Türkiye. Portfolio, experience, and selected projects.">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://bqrayvzdgn.github.io/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Buğrahan Yavuzdoğan — Software Developer">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Buğrahan Yavuzdoğan — Software Developer">
+<meta name="twitter:description" content="Software developer based in Istanbul, Türkiye. Portfolio, experience, and selected projects.">
+<meta name="twitter:image" content="https://bqrayvzdgn.github.io/og.png">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
@@ -15,10 +36,11 @@
    Automatic dark mode based on system preference.
    ============================================================ */
 :root{
+  color-scheme:light dark;
   --bg:#ffffff;
   --text:#151515;
-  --gray:#6b6b6b;
-  --light:#a3a3a3;
+  --gray:#595959;
+  --light:#767676;
   --line:#e6e6e6;
 }
 @media (prefers-color-scheme: dark){
@@ -26,7 +48,7 @@
     --bg:#121212;
     --text:#ececec;
     --gray:#9b9b9b;
-    --light:#5f5f5f;
+    --light:#7c7c7c;
     --line:#2a2a2a;
   }
 }
@@ -154,6 +176,20 @@ footer{
   .item-head{flex-direction:column;gap:2px}
 }
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Buğrahan Yavuzdoğan",
+  "jobTitle": "Software Developer",
+  "url": "https://bqrayvzdgn.github.io/",
+  "email": "mailto:bqrayvzdgn@gmail.com",
+  "worksFor": { "@type": "Organization", "name": "Yapıdrom Teknoloji" },
+  "address": { "@type": "PostalAddress", "addressLocality": "Istanbul", "addressCountry": "TR" },
+  "knowsAbout": ["C#", ".NET", "ASP.NET Core", "Entity Framework Core", "Clean Architecture", "Microservices", "PostgreSQL", "RabbitMQ", "React", "Next.js", "TypeScript", "Docker"],
+  "sameAs": ["https://github.com/bqrayvzdgn", "https://www.linkedin.com/in/bugrahan-yavuzdogan"]
+}
+</script>
 </head>
 <body>
 <div class="page">
@@ -162,13 +198,11 @@ footer{
   <header>
     <h1>Buğrahan Yavuzdoğan</h1>
     <p class="role">Software Developer — Istanbul, Türkiye</p>
-    <!-- Edit the summary below however you like -->
     <p class="intro">
-      Software Developer with hands-on experience across the software
-      development lifecycle. A solution-oriented professional with strong
-      analytical thinking, problem-solving, and teamwork skills, and a genuine
-      eagerness to learn. Committed to adding value to every project I
-      contribute to and to continuous professional growth.
+      Backend-focused software developer building and maintaining services that run
+      in production. I like taking a problem from a rough requirement to something
+      <strong>reliable and maintainable</strong>, and I care about writing clear code
+      and getting a little better with each thing I ship.
     </p>
     <p class="available">
       Get in touch: <a href="mailto:bqrayvzdgn@gmail.com">bqrayvzdgn@gmail.com</a>
@@ -196,30 +230,15 @@ footer{
     </div>
   </section>
 
-  <!-- ============ PROJECTS ============ -->
-  <!-- The block below is a template. Replace "Project Name" and the
-       description with your own project; duplicate the block to add more.
-       Put the project link in place of href="#". -->
-  <section aria-label="Projects">
-    <h2>Projects</h2>
-
-    <div class="item">
-      <div class="item-head">
-        <h3><a href="#">Project Name</a></h3>
-        <span class="date">2025</span>
-      </div>
-      <p>A one-sentence description of what the project does.</p>
-    </div>
-  </section>
-
   <!-- ============ SKILLS ============ -->
-  <!-- Fill in with your own skills. Grouping example:
-       <b>Languages:</b> C#, JavaScript · <b>Frontend:</b> React ·
-       <b>Tools:</b> Git, Docker -->
   <section aria-label="Skills">
     <h2>Skills</h2>
     <p class="skills">
-      List your languages, frameworks, and tools here.
+      <b>Languages:</b> C#, TypeScript, JavaScript, SQL ·
+      <b>Backend:</b> .NET 8, ASP.NET Core, Entity Framework Core, Clean Architecture, Microservices, SignalR ·
+      <b>Frontend:</b> React, Next.js, Tailwind CSS, TanStack Query, React Hook Form, Zod ·
+      <b>Data &amp; Messaging:</b> PostgreSQL, RabbitMQ, Hangfire ·
+      <b>DevOps &amp; Tools:</b> Docker, GitHub Actions, Git, Serilog, Swagger
     </p>
   </section>
 
@@ -228,9 +247,8 @@ footer{
     <h2>Contact</h2>
     <p>The fastest way to reach me is email.</p>
     <a class="mail" href="mailto:bqrayvzdgn@gmail.com">bqrayvzdgn@gmail.com</a>
-    <!-- Paste your LinkedIn profile URL in place of href="#" below -->
     <p class="links">
-      <a href="https://github.com/bqrayvzdgn" rel="noopener">GitHub</a> · <a href="#" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/bqrayvzdgn" target="_blank" rel="noopener noreferrer">GitHub</a> · <a href="https://www.linkedin.com/in/bugrahan-yavuzdogan" target="_blank" rel="noopener noreferrer">LinkedIn</a>
     </p>
   </section>
 

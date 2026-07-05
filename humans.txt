@@ -1,0 +1,10 @@
+/* TEAM */
+Developer: Buğrahan Yavuzdoğan
+Site: https://bqrayvzdgn.github.io
+GitHub: @bqrayvzdgn
+Location: İstanbul, Türkiye
+
+/* SITE */
+Languages: English, Türkçe
+Standards: HTML5, CSS3
+Components: Hand-written, zero JavaScript, no frameworks

@@ -14,6 +14,8 @@
 <meta name="theme-color" content="#121212" media="(prefers-color-scheme: dark)">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<link rel="author" type="text/plain" href="humans.txt">
 
 <!-- Open Graph / social sharing -->
 <meta property="og:type" content="website">
@@ -138,17 +140,18 @@ h2{
   justify-content:space-between;
   align-items:baseline;
   gap:16px;
-  flex-wrap:wrap;
 }
 .item-head h3{
   font-size:1.0625rem;
   font-weight:600;
+  min-width:0;
 }
 .item-head .co{color:var(--gray);font-weight:400}
 .date{
   color:var(--light);
   font-size:.85rem;
   white-space:nowrap;
+  flex-shrink:0;
 }
 .item p{
   margin-top:4px;
@@ -187,6 +190,16 @@ footer{
 @media (max-width: 480px){
   .page{padding-top:64px}
   .item-head{flex-direction:column;gap:2px}
+}
+
+/* ---------- print (clean, CV-like) ---------- */
+@media print{
+  :root{--bg:#fff;--text:#000;--gray:#333;--light:#555;--line:#ccc}
+  .lang-switch{display:none}
+  .page{padding:24px 0;max-width:none}
+  a{text-decoration:none;color:#000}
+  section{margin-top:26px}
+  .item,.item-head{break-inside:avoid}
 }
 </style>
 <script type="application/ld+json">

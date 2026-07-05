@@ -1,0 +1,15 @@
+{
+  "name": "Buğrahan Yavuzdoğan — Software Developer",
+  "short_name": "Buğrahan Y.",
+  "description": "Backend-focused software developer based in Istanbul, Türkiye.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#121212",
+  "theme_color": "#121212",
+  "lang": "en",
+  "icons": [
+    { "src": "/icon-192.png", "type": "image/png", "sizes": "192x192", "purpose": "any maskable" },
+    { "src": "/icon-512.png", "type": "image/png", "sizes": "512x512", "purpose": "any maskable" }
+  ]
+}

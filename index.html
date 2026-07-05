@@ -40,6 +40,10 @@
    Hierarchy is built with spacing, weight, and gray tones.
    Automatic dark mode based on system preference.
    ============================================================ */
+
+/* smooth same-origin page transitions (progressive; zero JS) */
+@view-transition{ navigation: auto; }
+
 :root{
   color-scheme:light dark;
   --bg:#ffffff;
@@ -70,11 +74,12 @@ body{
 }
 
 ::selection{background:var(--text);color:var(--bg)}
+p{text-wrap:pretty}
 
 .page{
   max-width:640px;
   margin:0 auto;
-  padding:88px 24px 56px;
+  padding:clamp(60px, 5vw + 40px, 88px) 24px 56px;
 }
 
 a{
@@ -103,10 +108,11 @@ a:focus-visible{
 
 /* ---------- intro ---------- */
 h1{
-  font-size:1.55rem;
+  font-size:clamp(1.45rem, 1.28rem + 0.85vw, 1.9rem);
   font-weight:600;
   letter-spacing:-.01em;
   line-height:1.3;
+  text-wrap:balance;
 }
 .role{
   color:var(--gray);
@@ -123,7 +129,7 @@ h1{
 }
 
 /* ---------- sections ---------- */
-section{margin-top:72px}
+section{margin-top:clamp(52px, 9vw, 72px)}
 h2{
   font-size:.78rem;
   font-weight:500;
@@ -145,6 +151,7 @@ h2{
   font-size:1.0625rem;
   font-weight:600;
   min-width:0;
+  text-wrap:balance;
 }
 .item-head .co{color:var(--gray);font-weight:400}
 .date{
@@ -188,8 +195,24 @@ footer{
 }
 
 @media (max-width: 480px){
-  .page{padding-top:64px}
   .item-head{flex-direction:column;gap:2px}
+}
+
+/* subtle staggered entrance — zero JS, motion-safe */
+@media (prefers-reduced-motion: no-preference){
+  @keyframes rise{
+    from{opacity:0;transform:translateY(8px)}
+    to{opacity:1;transform:none}
+  }
+  .lang-switch, header, main section, footer{
+    animation:rise .55s cubic-bezier(.22,.61,.36,1) both;
+  }
+  header{animation-delay:.06s}
+  main section:nth-of-type(1){animation-delay:.12s}
+  main section:nth-of-type(2){animation-delay:.18s}
+  main section:nth-of-type(3){animation-delay:.24s}
+  main section:nth-of-type(4){animation-delay:.30s}
+  footer{animation-delay:.36s}
 }
 
 /* ---------- print (clean, CV-like) ---------- */

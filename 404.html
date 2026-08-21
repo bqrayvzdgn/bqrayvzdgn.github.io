@@ -17,10 +17,14 @@
   --mono:ui-monospace,SFMono-Regular,"SF Mono","Cascadia Code","Segoe UI Mono",Consolas,"Liberation Mono",monospace;
 }
 @media (prefers-color-scheme: dark){
-  :root{
+  :root:not([data-theme="light"]){
     --bg:#131319;--text:#eceaf2;--gray:#9a97a6;--light:#85828f;
     --ink:#a99cff;--ink-faint:#5a4fa8;
   }
+}
+:root[data-theme="dark"]{
+  --bg:#131319;--text:#eceaf2;--gray:#9a97a6;--light:#85828f;
+  --ink:#a99cff;--ink-faint:#5a4fa8;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 body{
@@ -44,6 +48,7 @@ a:hover{text-decoration-color:var(--ink)}
 a:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:2px}
 .sep{color:var(--light);margin:0 10px}
 </style>
+<script>(function(){try{var t=localStorage.getItem('theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}catch(e){}document.documentElement.className='js'})();</script>
 </head>
 <body>
   <main>

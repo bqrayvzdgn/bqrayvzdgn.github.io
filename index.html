@@ -64,8 +64,9 @@
 
   --mono:ui-monospace,SFMono-Regular,"SF Mono","Cascadia Code","Segoe UI Mono",Consolas,"Liberation Mono",monospace;
 }
+/* dark from the system preference, unless the visitor explicitly chose light */
 @media (prefers-color-scheme: dark){
-  :root{
+  :root:not([data-theme="light"]){
     --bg:#131319;
     --text:#eceaf2;
     --gray:#9a97a6;
@@ -75,6 +76,17 @@
     --ink-faint:#5a4fa8;
     --spine:#524d6b;
   }
+}
+/* dark because the visitor chose it, whatever the system says */
+:root[data-theme="dark"]{
+    --bg:#131319;
+    --text:#eceaf2;
+    --gray:#9a97a6;
+    --light:#85828f;
+    --line:#2a2933;
+    --ink:#a99cff;
+    --ink-faint:#5a4fa8;
+    --spine:#524d6b;
 }
 
 *{margin:0;padding:0;box-sizing:border-box}
@@ -111,10 +123,37 @@ a:focus-visible{
   border-radius:2px;
 }
 
+/* ---------- meta row: theme control + language ---------- */
+.meta-row{
+  display:flex;
+  align-items:baseline;
+  justify-content:space-between;
+  gap:16px;
+  margin-bottom:40px;
+}
+.theme-toggle{
+  display:none;
+  background:none;
+  border:0;
+  padding:0;
+  cursor:pointer;
+  font-family:var(--mono);
+  font-size:var(--t-micro);
+  letter-spacing:.14em;
+  color:var(--light);
+  transition:color .15s ease;
+}
+.js .theme-toggle{display:inline-block}
+.theme-toggle:hover{color:var(--ink)}
+.theme-toggle:focus-visible{
+  outline:2px solid var(--ink);
+  outline-offset:3px;
+  border-radius:2px;
+}
+
 /* ---------- language switch ---------- */
 .lang-switch{
   text-align:right;
-  margin-bottom:40px;
   font-family:var(--mono);
   font-size:var(--t-micro);
   letter-spacing:.08em;
@@ -234,7 +273,7 @@ footer{
     from{opacity:0;transform:translateY(8px)}
     to{opacity:1;transform:none}
   }
-  .lang-switch, header, main section, footer{
+  .meta-row, header, main section, footer{
     animation:rise .55s cubic-bezier(.22,.61,.36,1) both;
   }
   header{animation-delay:.06s}
@@ -251,7 +290,7 @@ footer{
     --bg:#fff;--text:#000;--gray:#333;--light:#555;
     --line:#ccc;--ink:#000;--ink-faint:#999;--spine:#bbb;
   }
-  .lang-switch{display:none}
+  .meta-row{display:none}
   .page{padding:24px 0;max-width:none}
   a{text-decoration:none;color:#000}
   section{margin-top:26px}
@@ -276,11 +315,15 @@ footer{
   "sameAs": ["https://github.com/bqrayvzdgn", "https://www.linkedin.com/in/bugrahan-yavuzdogan"]
 }
 </script>
+<script>(function(){try{var t=localStorage.getItem('theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}catch(e){}document.documentElement.className='js'})();</script>
 </head>
 <body>
 <div class="page">
 
-  <div class="lang-switch"><span aria-current="page">EN</span> / <a href="tr/index.html" hreflang="tr">TR</a></div>
+  <div class="meta-row">
+    <button type="button" class="theme-toggle" id="theme">AUTO</button>
+    <div class="lang-switch"><span aria-current="page">EN</span> / <a href="tr/index.html" hreflang="tr">TR</a></div>
+  </div>
 
   <!-- ============ INTRO ============ -->
   <header>
@@ -364,5 +407,20 @@ footer{
   <footer>© 2026 Buğrahan Yavuzdoğan</footer>
 
 </div>
+<script>
+(function(){
+  var btn=document.getElementById('theme'), root=document.documentElement;
+  var order=['auto','light','dark'], label={"auto":"AUTO","light":"LIGHT","dark":"DARK"};
+  function current(){ var t=root.getAttribute('data-theme'); return t==='light'||t==='dark' ? t : 'auto'; }
+  function paint(){ var c=current(); btn.textContent=label[c]; btn.setAttribute('aria-label',"Theme:"+' '+label[c]); }
+  btn.addEventListener('click',function(){
+    var next=order[(order.indexOf(current())+1)%order.length];
+    if(next==='auto'){ root.removeAttribute('data-theme'); try{localStorage.removeItem('theme')}catch(e){} }
+    else { root.setAttribute('data-theme',next); try{localStorage.setItem('theme',next)}catch(e){} }
+    paint();
+  });
+  paint();
+})();
+</script>
 </body>
 </html>

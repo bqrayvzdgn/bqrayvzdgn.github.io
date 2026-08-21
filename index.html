@@ -10,8 +10,8 @@
 <link rel="alternate" hreflang="tr" href="https://bqrayvzdgn.github.io/tr/">
 <link rel="alternate" hreflang="x-default" href="https://bqrayvzdgn.github.io/">
 <meta name="author" content="Buğrahan Yavuzdoğan">
-<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#121212" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#fcfcfd" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#131319" media="(prefers-color-scheme: dark)">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="manifest" href="site.webmanifest">
@@ -37,7 +37,8 @@
 <style>
 /* ============================================================
    Single column, system fonts, zero JavaScript.
-   Hierarchy is built with spacing, weight, and gray tones.
+   One hue at three saturations; hierarchy from weight,
+   spacing and ink temperature. Dates are set as data.
    Automatic dark mode based on system preference.
    ============================================================ */
 
@@ -46,19 +47,33 @@
 
 :root{
   color-scheme:light dark;
-  --bg:#ffffff;
-  --text:#151515;
-  --gray:#595959;
-  --light:#6e6e6e;
-  --line:#e6e6e6;
+  --bg:#fcfcfd;
+  --text:#17161f;
+  --gray:#54525e;
+  --light:#6e6c7a;
+  --line:#e6e5ec;
+  --ink:#4a3fc0;
+  --ink-faint:#b9b2ea;
+  --spine:#dedce8;
+
+  /* type scale, ratio 1.18 from a 1.0625rem base */
+  --t-micro:.76rem;
+  --t-small:.9rem;
+  --t-base:1.0625rem;
+  --t-lead:1.25rem;
+
+  --mono:ui-monospace,SFMono-Regular,"SF Mono","Cascadia Code","Segoe UI Mono",Consolas,"Liberation Mono",monospace;
 }
 @media (prefers-color-scheme: dark){
   :root{
-    --bg:#121212;
-    --text:#ececec;
-    --gray:#9b9b9b;
-    --light:#858585;
-    --line:#2a2a2a;
+    --bg:#131319;
+    --text:#eceaf2;
+    --gray:#9a97a6;
+    --light:#85828f;
+    --line:#2a2933;
+    --ink:#a99cff;
+    --ink-faint:#5a4fa8;
+    --spine:#302e3d;
   }
 }
 
@@ -68,12 +83,12 @@ body{
   background:var(--bg);
   color:var(--text);
   font-family:"Inter Tight",system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-  font-size:1.0625rem;
+  font-size:var(--t-base);
   line-height:1.7;
   -webkit-font-smoothing:antialiased;
 }
 
-::selection{background:var(--text);color:var(--bg)}
+::selection{background:var(--ink);color:var(--bg)}
 p{text-wrap:pretty}
 
 .page{
@@ -83,15 +98,15 @@ p{text-wrap:pretty}
 }
 
 a{
-  color:var(--text);
+  color:var(--ink);
   text-decoration:underline;
-  text-decoration-color:var(--light);
+  text-decoration-color:var(--ink-faint);
   text-underline-offset:3px;
   transition:text-decoration-color .15s ease, color .15s ease;
 }
-a:hover{text-decoration-color:var(--text)}
+a:hover{text-decoration-color:var(--ink)}
 a:focus-visible{
-  outline:2px solid var(--text);
+  outline:2px solid var(--ink);
   outline-offset:3px;
   border-radius:2px;
 }
@@ -100,23 +115,26 @@ a:focus-visible{
 .lang-switch{
   text-align:right;
   margin-bottom:40px;
-  font-size:.85rem;
+  font-family:var(--mono);
+  font-size:var(--t-micro);
+  letter-spacing:.08em;
+  color:var(--line);
 }
 .lang-switch span{color:var(--text);font-weight:500}
-.lang-switch a{color:var(--light)}
-.lang-switch a:hover{color:var(--text)}
+.lang-switch a{color:var(--light);text-decoration-color:transparent}
+.lang-switch a:hover{color:var(--ink);text-decoration-color:var(--ink-faint)}
 
 /* ---------- intro ---------- */
 h1{
-  font-size:clamp(1.45rem, 1.28rem + 0.85vw, 1.9rem);
+  font-size:clamp(1.48rem, 1.30rem + 0.9vw, 1.75rem);
   font-weight:600;
-  letter-spacing:-.01em;
-  line-height:1.3;
+  letter-spacing:-.02em;
+  line-height:1.25;
   text-wrap:balance;
 }
 .role{
   color:var(--gray);
-  margin-top:2px;
+  margin-top:4px;
 }
 .intro{
   margin-top:28px;
@@ -131,16 +149,23 @@ h1{
 /* ---------- sections ---------- */
 section{margin-top:clamp(52px, 9vw, 72px)}
 h2{
-  font-size:.78rem;
+  font-family:var(--mono);
+  font-size:var(--t-micro);
   font-weight:500;
-  letter-spacing:.12em;
+  letter-spacing:.14em;
   text-transform:uppercase;
   color:var(--light);
   margin-bottom:26px;
 }
 
-/* ---------- experience ---------- */
-.item + .item{margin-top:30px}
+/* ---------- dated records: the spine ----------
+   .item exists only in Experience and Education, the two
+   sections where order carries real information. */
+.item{
+  border-left:1px solid var(--spine);
+  padding-left:18px;
+}
+.item + .item{margin-top:26px}
 .item-head{
   display:flex;
   justify-content:space-between;
@@ -148,22 +173,25 @@ h2{
   gap:16px;
 }
 .item-head h3{
-  font-size:1.0625rem;
+  font-size:var(--t-base);
   font-weight:600;
+  letter-spacing:-.01em;
   min-width:0;
   text-wrap:balance;
 }
-.item-head .co{color:var(--gray);font-weight:400}
+.item-head .co{color:var(--gray);font-weight:400;letter-spacing:0}
 .date{
+  font-family:var(--mono);
+  font-variant-numeric:tabular-nums;
+  font-size:var(--t-small);
+  letter-spacing:-.01em;
   color:var(--light);
-  font-size:.85rem;
   white-space:nowrap;
   flex-shrink:0;
 }
 .item p{
-  margin-top:4px;
+  margin-top:6px;
   color:var(--gray);
-  font-size:.97rem;
 }
 
 /* ---------- skills ---------- */
@@ -175,26 +203,28 @@ h2{
 .contact .mail{
   display:inline-block;
   margin-top:10px;
-  font-size:1.125rem;
+  font-size:var(--t-lead);
   font-weight:500;
+  letter-spacing:-.01em;
 }
 .links{
   margin-top:14px;
   color:var(--light);
 }
-.links a{color:var(--gray)}
-.links a:hover{color:var(--text)}
 
 /* ---------- footer ---------- */
 footer{
   margin-top:80px;
   padding-top:24px;
   border-top:1px solid var(--line);
+  font-family:var(--mono);
+  font-size:var(--t-micro);
+  letter-spacing:.02em;
   color:var(--light);
-  font-size:.85rem;
 }
 
 @media (max-width: 480px){
+  .item{padding-left:14px}
   .item-head{flex-direction:column;gap:2px}
 }
 
@@ -217,7 +247,10 @@ footer{
 
 /* ---------- print (clean, CV-like) ---------- */
 @media print{
-  :root{--bg:#fff;--text:#000;--gray:#333;--light:#555;--line:#ccc}
+  :root{
+    --bg:#fff;--text:#000;--gray:#333;--light:#555;
+    --line:#ccc;--ink:#000;--ink-faint:#999;--spine:#bbb;
+  }
   .lang-switch{display:none}
   .page{padding:24px 0;max-width:none}
   a{text-decoration:none;color:#000}

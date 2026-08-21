@@ -7,15 +7,20 @@
 <meta name="robots" content="noindex">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#121212" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#fcfcfd" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#131319" media="(prefers-color-scheme: dark)">
 <style>
 :root{
   color-scheme:light dark;
-  --bg:#ffffff;--text:#151515;--gray:#595959;--light:#6e6e6e;
+  --bg:#fcfcfd;--text:#17161f;--gray:#54525e;--light:#6e6c7a;
+  --ink:#4a3fc0;--ink-faint:#b9b2ea;
+  --mono:ui-monospace,SFMono-Regular,"SF Mono","Cascadia Code","Segoe UI Mono",Consolas,"Liberation Mono",monospace;
 }
 @media (prefers-color-scheme: dark){
-  :root{--bg:#121212;--text:#ececec;--gray:#9b9b9b;--light:#858585;}
+  :root{
+    --bg:#131319;--text:#eceaf2;--gray:#9a97a6;--light:#85828f;
+    --ink:#a99cff;--ink-faint:#5a4fa8;
+  }
 }
 *{margin:0;padding:0;box-sizing:border-box}
 body{
@@ -25,13 +30,18 @@ body{
   min-height:100vh;display:flex;align-items:center;justify-content:center;
   padding:24px;text-align:center;
 }
-::selection{background:var(--text);color:var(--bg)}
-.code{font-size:.78rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--light)}
-h1{font-size:1.55rem;font-weight:600;letter-spacing:-.01em;margin-top:14px}
-p{color:var(--gray);margin-top:10px}
+::selection{background:var(--ink);color:var(--bg)}
+.code{
+  font-family:var(--mono);font-variant-numeric:tabular-nums;
+  font-size:.76rem;font-weight:500;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--light);
+}
+h1{font-size:1.55rem;font-weight:600;letter-spacing:-.02em;line-height:1.25;margin-top:14px}
+p{color:var(--gray);margin-top:10px;text-wrap:pretty}
 .links{margin-top:26px;font-size:.95rem}
-a{color:var(--text);text-decoration:underline;text-decoration-color:var(--light);text-underline-offset:3px;transition:text-decoration-color .15s ease}
-a:hover{text-decoration-color:var(--text)}
+a{color:var(--ink);text-decoration:underline;text-decoration-color:var(--ink-faint);text-underline-offset:3px;transition:text-decoration-color .15s ease, color .15s ease}
+a:hover{text-decoration-color:var(--ink)}
+a:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:2px}
 .sep{color:var(--light);margin:0 10px}
 </style>
 </head>

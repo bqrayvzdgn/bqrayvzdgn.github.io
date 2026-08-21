@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Buğrahan Yavuzdoğan — Backend Geliştirici</title>
-<meta name="description" content="Buğrahan Yavuzdoğan — İstanbul merkezli backend geliştirici. Deneyim, eğitim, yetenekler ve iletişim.">
+<meta name="description" content="Buğrahan Yavuzdoğan — İstanbul merkezli backend geliştirici. Deneyim, projeler, eğitim, yetenekler ve iletişim.">
 <link rel="canonical" href="https://bqrayvzdgn.github.io/tr/">
 <link rel="alternate" hreflang="en" href="https://bqrayvzdgn.github.io/">
 <link rel="alternate" hreflang="tr" href="https://bqrayvzdgn.github.io/tr/">
@@ -21,7 +21,7 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://bqrayvzdgn.github.io/tr/">
 <meta property="og:title" content="Buğrahan Yavuzdoğan — Backend Geliştirici">
-<meta property="og:description" content="İstanbul merkezli backend geliştirici. Deneyim, eğitim, yetenekler ve iletişim.">
+<meta property="og:description" content="İstanbul merkezli backend geliştirici. Deneyim, projeler, eğitim, yetenekler ve iletişim.">
 <meta property="og:locale" content="tr_TR">
 <meta property="og:locale:alternate" content="en_US">
 <meta property="og:image" content="https://bqrayvzdgn.github.io/og.png">
@@ -30,7 +30,7 @@
 <meta property="og:image:alt" content="Buğrahan Yavuzdoğan — Backend Geliştirici">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Buğrahan Yavuzdoğan — Backend Geliştirici">
-<meta name="twitter:description" content="İstanbul merkezli backend geliştirici. Deneyim, eğitim, yetenekler ve iletişim.">
+<meta name="twitter:description" content="İstanbul merkezli backend geliştirici. Deneyim, projeler, eğitim, yetenekler ve iletişim.">
 <meta name="twitter:image" content="https://bqrayvzdgn.github.io/og.png">
 <meta name="twitter:image:alt" content="Buğrahan Yavuzdoğan — Backend Geliştirici">
 
@@ -226,7 +226,9 @@ h2{
   text-wrap:balance;
 }
 .item-head .co{color:var(--gray);font-weight:400;letter-spacing:0}
-.date{
+/* .meta is the same slot as .date, for entries whose right-hand value is
+   not a date -- a project's stack, for instance */
+.date, .meta{
   font-family:var(--mono);
   font-variant-numeric:tabular-nums;
   font-size:var(--t-small);
@@ -238,6 +240,13 @@ h2{
 .item p{
   margin-top:6px;
   color:var(--gray);
+}
+.item .repo{
+  display:inline-block;
+  margin-top:7px;
+  font-family:var(--mono);
+  font-size:var(--t-small);
+  letter-spacing:-.01em;
 }
 
 /* ---------- skills ---------- */
@@ -288,7 +297,8 @@ footer{
   main section:nth-of-type(2){animation-delay:.18s}
   main section:nth-of-type(3){animation-delay:.24s}
   main section:nth-of-type(4){animation-delay:.30s}
-  footer{animation-delay:.36s}
+  main section:nth-of-type(5){animation-delay:.36s}
+  footer{animation-delay:.42s}
 }
 
 /* ---------- print (clean, CV-like) ---------- */
@@ -375,6 +385,20 @@ footer{
         <span class="date">Ara 2024 — Oca 2025</span>
       </div>
       <p>Staj süresince bir backend servisini takım liderimin mentörlüğünde tasarlayıp geliştirdim. Staj bittikten sonra üretime alındı ve hâlâ geliştirmesini sürdürüyorum.</p>
+    </div>
+  </section>
+
+  <!-- ============ PROJELER ============ -->
+  <section aria-label="Projeler">
+    <h2>Projeler</h2>
+
+    <div class="item">
+      <div class="item-head">
+        <h3>ASTronaut</h3>
+        <span class="meta">TypeScript · C#</span>
+      </div>
+      <p>.NET kaynak kodundan, uygulamayı çalıştırmadan Roslyn statik analiziyle OpenAPI 3.1 üretir — böylece CI'da ve derlenmeyen kodda da çalışır. Ayrıştırıcılarla üretici arasında dile bağımsız bir ara temsil bulunuyor; böylece başka framework'ler eklenebilir.</p>
+      <a class="repo" href="https://github.com/bqrayvzdgn/ASTronaut" target="_blank" rel="noopener noreferrer">github.com/bqrayvzdgn/ASTronaut</a>
     </div>
   </section>
 

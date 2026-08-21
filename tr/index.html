@@ -232,6 +232,27 @@ h2{
   margin-top:6px;
   color:var(--gray);
 }
+.item ul{
+  list-style:none;
+  margin-top:12px;
+}
+.item li{
+  position:relative;
+  margin-top:7px;
+  padding-left:15px;
+  color:var(--gray);
+}
+/* a short rule, not a dot -- same hairline language as the spine */
+.item li::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:.78em;
+  width:6px;
+  height:1px;
+  background:var(--light);
+}
+.item li b{color:var(--text);font-weight:500}
 
 /* ---------- skills ---------- */
 .skills{color:var(--gray)}
@@ -351,7 +372,14 @@ footer{
         <h3>Yazılım Geliştirici<span class="co">, Yapıdrom Teknoloji</span></h3>
         <span class="date">Nis 2025 — Günümüz</span>
       </div>
-      <p>Bir scooter paylaşım platformunun backend'inde çalışıyorum. Ürün gereksinimlerini çalışan servislere dönüştürüyorum: .NET 8/9 ve Clean Architecture ile REST API'ler, PostgreSQL ve Entity Framework Core ile veri, önbellekleme için Redis, servisler arası asenkron iletişim için RabbitMQ. Üç servis uçtan uca bana ait — uygulamaya, yönetim paneline ve diğer servislere hata kodları, sıkça sorulan sorular ve duyurular için tek kaynak sağlayan içerik servisi; geri bildirim servisi; ve kullanılabilirlik ile sürüş güvenliği kurallarını besleyen hava durumu servisi. Ayrıca iş ortağımız için bir bisiklet kiralama ürününün API'sini ve yönetim panelini geliştirdim; şirket içi Next.js yönetim paneline de katkı sağlıyorum.</p>
+      <p>Bir scooter paylaşım platformunun backend'i; ürün gereksinimlerini çalışan servislere dönüştürüyorum: .NET 8/9 ve Clean Architecture ile REST API'ler, PostgreSQL ve Entity Framework Core, önbellekleme için Redis, servisler arası RabbitMQ.</p>
+      <ul role="list">
+        <li><b>İçerik servisi</b> — uçtan uca bana ait; uygulama, yönetim paneli ve diğer servisler için hata kodu, SSS ve duyurularda tek kaynak</li>
+        <li><b>Hava durumu servisi</b> — uçtan uca bana ait; kullanılabilirlik ve sürüş güvenliği kurallarını besliyor</li>
+        <li><b>Geri bildirim servisi</b> — uçtan uca bana ait</li>
+        <li><b>İş ortağı bisiklet kiralama ürünü</b> — API'sini ve yönetim panelini geliştirdim</li>
+        <li><b>Şirket içi yönetim paneli</b> — katkı, Next.js</li>
+      </ul>
     </div>
 
     <div class="item">

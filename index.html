@@ -232,6 +232,27 @@ h2{
   margin-top:6px;
   color:var(--gray);
 }
+.item ul{
+  list-style:none;
+  margin-top:12px;
+}
+.item li{
+  position:relative;
+  margin-top:7px;
+  padding-left:15px;
+  color:var(--gray);
+}
+/* a short rule, not a dot -- same hairline language as the spine */
+.item li::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:.78em;
+  width:6px;
+  height:1px;
+  background:var(--light);
+}
+.item li b{color:var(--text);font-weight:500}
 
 /* ---------- skills ---------- */
 .skills{color:var(--gray)}
@@ -350,7 +371,14 @@ footer{
         <h3>Software Developer<span class="co">, Yapıdrom Teknoloji</span></h3>
         <span class="date">Apr 2025 — Present</span>
       </div>
-      <p>Backend developer on a scooter-sharing platform. I take product requirements through to running services: REST APIs in .NET 8/9 with Clean Architecture, PostgreSQL and Entity Framework Core for data, Redis for caching, and RabbitMQ for asynchronous messaging between services. Three services are mine end to end — content, which gives the app, admin panel and other services a single source for error codes, FAQs and announcements; feedback; and weather, which feeds availability and rider-safety rules. I also built the API and admin panel for a partner bike-rental product, and contribute to an internal Next.js admin panel.</p>
+      <p>Backend of a scooter-sharing platform, turning product requirements into running services: REST APIs in .NET 8/9 with Clean Architecture, PostgreSQL and Entity Framework Core, Redis for caching, RabbitMQ between services.</p>
+      <ul role="list">
+        <li><b>Content service</b> — owned end to end; one source for error codes, FAQs and announcements across the app, the admin panel and other services</li>
+        <li><b>Weather service</b> — owned end to end; feeds availability and rider-safety rules</li>
+        <li><b>Feedback service</b> — owned end to end</li>
+        <li><b>Partner bike-rental product</b> — built the API and the admin panel</li>
+        <li><b>Internal admin panel</b> — contributor, Next.js</li>
+      </ul>
     </div>
 
     <div class="item">

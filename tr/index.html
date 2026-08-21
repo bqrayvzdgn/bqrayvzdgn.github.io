@@ -89,6 +89,13 @@
     --spine:#524d6b;
 }
 
+/* Scroll anchoring must stay off. The entrance animation at the bottom of this
+   file moves content up by 8px; Chrome treats that as a layout shift and scrolls
+   down 8px to compensate. The browser then remembers that offset across reloads,
+   so holding F5 walks the page down the document. Verified: with anchoring on the
+   page drifts, with it off it does not. Deleting this line brings the bug back. */
+html{overflow-anchor:none}
+
 *{margin:0;padding:0;box-sizing:border-box}
 
 body{

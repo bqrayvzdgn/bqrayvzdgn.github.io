@@ -7,4 +7,5 @@ Location: İstanbul, Türkiye
 /* SITE */
 Languages: English, Türkçe
 Standards: HTML5, CSS3
-Components: Hand-written, zero JavaScript, no frameworks
+Components: Hand-written, no frameworks, no build step
+JavaScript: Theme toggle only
